@@ -1,0 +1,59 @@
+﻿@using System.Drawing
+@implements IDisposable
+@inject IJSRuntime JSRuntime
+
+<h3>MyKendoPdfViewer - @FileName</h3>
+
+<div @ref="myWrapperRef">
+    <div id="@WidgetId" data-filename="@FileName" data-width="@Width" data-height="@Height" data-scale="@Scale" data-PdfData="@PdfData"></div>
+</div>
+
+@code {
+    [Parameter]
+    public string WidgetId { get; set; } = string.Empty;
+    [Parameter]
+    public string FileName { get; set; } = string.Empty;
+    [Parameter]
+    public string Width { get; set; } = string.Empty;
+    [Parameter]
+    public string Height { get; set; } = string.Empty;
+    [Parameter]
+    public string Scale { get; set; } = string.Empty;
+    [Parameter]
+    public string PdfData { get; set; } = string.Empty;
+
+    ElementReference myWrapperRef;
+    DotNetObjectReference<MyKendoPdfViewer>? CurrentRazorComponent { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (CurrentRazorComponent == null)
+            {
+                CurrentRazorComponent = DotNetObjectReference.Create(this);
+            }
+
+            // Manual, without the widget, not used anymore!
+            // await JSRuntime.InvokeVoidAsync("setPDFViewer");
+
+            // Widget version passing the PDF by its filename
+            // await JSRuntime.InvokeVoidAsync("createWidget", "createPdfViewer", myWrapperRef, WidgetId, CurrentRazorComponent);
+
+            // Widget version passing the PDF as Base64 data
+            await JSRuntime.InvokeVoidAsync("createWidget", "createPdfViewerData", myWrapperRef, WidgetId, CurrentRazorComponent);
+
+            // make sure the element IDs are unique in the application. In this example, the ID comes from a parameter
+            // you can distinguish elements in the DOM with jQuery in other ways as well, but IDs and name attributes are often used
+        }
+    }
+
+    public void Dispose()
+    {
+        JSRuntime.InvokeVoidAsync("destroyWidgets", myWrapperRef);
+        if (CurrentRazorComponent != null)
+        {
+            CurrentRazorComponent.Dispose();
+        }
+    }
+}

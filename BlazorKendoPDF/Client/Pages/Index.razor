@@ -1,0 +1,12 @@
+﻿@page "/"
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Kendo PDF Viewer</PageTitle>
+
+<input type="button" value="Download" onclick="onDownloadClick()"/>
+<input type="button" value="Remove Print From Toolbar" onclick="removePrintFromToolbar()" />
+<input type="button" value="Adjust settings" onclick="adjustSettings()" />
+<input type="button" value="Set File" onclick="setFile()" />
+<input type="button" value="Set Data" onclick="setData()" />
+
+<MyKendoPdfViewer WidgetId="pdfViewer" FileName="SampleReport.pdf" Width="100%" Height="100%" Scale="2" PdfData="JVBERi0xLjEKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDEvTWVkaWFCb3ggWy00MCAtNjQgMjYwIDgwXSA+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9SZXNvdXJjZXM8PC9Gb250PDwvRjE8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9BcmlhbD4+ID4+ID4+L0NvbnRlbnRzIDQgMCBSPj5lbmRvYmoKNCAwIG9iajw8L0xlbmd0aCA1OT4+CnN0cmVhbQpCVAovRjEgMTggVGYKMCAwIFRkCihUZWxlcmlrIFBkZlZpZXdlciBmb3IgQmxhem9yKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA1CjAwMDAwMDAwMDAgNjU1MzUgZgowMDAwMDAwMDIxIDAwMDAwIG4KMDAwMDAwMDA4NiAwMDAwMCBuCjAwMDAwMDAxOTUgMDAwMDAgbgowMDAwMDAwNDkwIDAwMDAwIG4KdHJhaWxlciA8PCAgL1Jvb3QgMSAwIFIgL1NpemUgNSA+PgpzdGFydHhyZWYKNjA5CiUlRU9G" />
