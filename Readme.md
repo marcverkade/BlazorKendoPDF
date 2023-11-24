@@ -8,12 +8,14 @@ This Kendo UI for jQuery PDF Viewer sample for Blazor is created to replace the 
 * Updated pdf.js to 3.11.174 in stead of 2.2.x
 * Loading PDF from file or Data in the PDF viewer
 * Wait for the PDF viewer component to load the PDF (max 10 seconds) so it can be used in javascript
+* Check browser console for diagnostics
+* Just compile and run...
 
 Custom buttons for complete PDF manipulation...
 
 - Load PDF from file or data
 - Wait for PDF viewer to load
-- Added hiding / show PDF viwer
+- Added hiding / show PDF viewer
 - Wait for PDF viewer to load
 - Load PDF from data and preserve the current zoom-level
 - Set/Get zoomlevel Value
@@ -21,6 +23,6 @@ Custom buttons for complete PDF manipulation...
 - Remove buttons from the toolbar
 - Execute a command (download)
 - Adjust width/height
-- Set initial scale (which is used when loading a PDF)
+- Set initial scale (which is used when loading a PDF in the viewer)
 
-VSI Curacao - www.vsi.cw - Marc Verkade - November 2023
+ Marc Verkade - VSI Curacao - www.vsi.cw - info@vsi.cw - November 2023
