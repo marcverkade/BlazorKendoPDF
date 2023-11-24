@@ -11,18 +11,16 @@ This Kendo UI for jQuery PDF Viewer sample for Blazor is created to replace the 
 
 Custom buttons for complete PDF manipulation...
 
-<input type="button" value="Download" onclick="onDownloadClick()"/>
-<input type="button" value="Remove buttons from Toolbar" onclick="removeButtonsFromToolbar()" />
-<input type="button" value="Adjust settings" onclick="adjustSettings()" />
-<input type="button" value="Set PDF from file" onclick="setFile()" />
-<input type="button" value="Set PDF from data" onclick="setData()" />
-<input type="button" value="Set PDF from data and preserve the current zoom-level" onclick="setDataPreserve()" />
-<input type="button" value="Set Scale" onclick="setScale(2.67)" />
-<input type="button" value="Set Fullwidth" onclick="setZoomOption(2)" />
-<input type="button" value="Get the current zoom-option" onclick="getZoomOption()" />
-<input type="button" value="Get the current zoom-value" onclick="getZoomValue()" />
-<input type="button" value="Set zoom-value" onclick="setZoomValue(123)" />
-<input type="button" value="Hide the PDF viewer" onclick="addClass('vsi-hidden')" />
-<input type="button" value="Show the PDF viewer" onclick="removeClass('vsi-hidden')" />
+- Load PDF from file or data
+- Wait for PDF viewer to load
+- Added hiding / show PDF viwer
+- Wait for PDF viewer to load
+- Load PDF from data and preserve the current zoom-level
+- Set/Get zoomlevel Value
+- Set/Get zoomlevel Option
+- Remove buttons from the toolbar
+- Execute a command (download)
+- Adjust width/height
+- Set initial scale (which is used when loading a PDF)
 
 VSI Curacao - www.vsi.cw - Marc Verkade - November 2023
