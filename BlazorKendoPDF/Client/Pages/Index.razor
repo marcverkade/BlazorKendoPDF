@@ -4,9 +4,17 @@
 <PageTitle>Kendo PDF Viewer</PageTitle>
 
 <input type="button" value="Download" onclick="onDownloadClick()"/>
-<input type="button" value="Remove Print From Toolbar" onclick="removePrintFromToolbar()" />
+<input type="button" value="Remove buttons from Toolbar" onclick="removeButtonsFromToolbar()" />
 <input type="button" value="Adjust settings" onclick="adjustSettings()" />
-<input type="button" value="Set File" onclick="setFile()" />
-<input type="button" value="Set Data" onclick="setData()" />
+<input type="button" value="Set PDF from file" onclick="setFile()" />
+<input type="button" value="Set PDF from data" onclick="setData()" />
+<input type="button" value="Set PDF from data and preserve the current zoom-level" onclick="setDataPreserve()" />
+<input type="button" value="Set Scale" onclick="setScale(2.67)" />
+<input type="button" value="Set Fullwidth" onclick="setZoomOption(2)" />
+<input type="button" value="Get the current zoom-option" onclick="getZoomOption()" />
+<input type="button" value="Get the current zoom-value" onclick="getZoomValue()" />
+<input type="button" value="Set zoom-value" onclick="setZoomValue(123)" />
+<input type="button" value="Hide the PDF viewer" onclick="addClass('vsi-hidden')" />
+<input type="button" value="Show the PDF viewer" onclick="removeClass('vsi-hidden')" />
 
-<MyKendoPdfViewer WidgetId="pdfViewer" FileName="SampleReport.pdf" Width="100%" Height="100%" Scale="2" PdfData="JVBERi0xLjEKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDEvTWVkaWFCb3ggWy00MCAtNjQgMjYwIDgwXSA+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9SZXNvdXJjZXM8PC9Gb250PDwvRjE8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9BcmlhbD4+ID4+ID4+L0NvbnRlbnRzIDQgMCBSPj5lbmRvYmoKNCAwIG9iajw8L0xlbmd0aCA1OT4+CnN0cmVhbQpCVAovRjEgMTggVGYKMCAwIFRkCihUZWxlcmlrIFBkZlZpZXdlciBmb3IgQmxhem9yKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA1CjAwMDAwMDAwMDAgNjU1MzUgZgowMDAwMDAwMDIxIDAwMDAwIG4KMDAwMDAwMDA4NiAwMDAwMCBuCjAwMDAwMDAxOTUgMDAwMDAgbgowMDAwMDAwNDkwIDAwMDAwIG4KdHJhaWxlciA8PCAgL1Jvb3QgMSAwIFIgL1NpemUgNSA+PgpzdGFydHhyZWYKNjA5CiUlRU9G" />
+<MyKendoPdfViewer WidgetId="pdfViewer" FileName="SampleReport.pdf" Width="100%" Height="100%" Scale="1.1" PdfData="JVBERi0xLjEKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCjIgMCBvYmo8PC9UeXBlL1BhZ2VzL0tpZHNbMyAwIFJdL0NvdW50IDEvTWVkaWFCb3ggWy00MCAtNjQgMjYwIDgwXSA+PmVuZG9iagozIDAgb2JqPDwvVHlwZS9QYWdlL1BhcmVudCAyIDAgUi9SZXNvdXJjZXM8PC9Gb250PDwvRjE8PC9UeXBlL0ZvbnQvU3VidHlwZS9UeXBlMS9CYXNlRm9udC9BcmlhbD4+ID4+ID4+L0NvbnRlbnRzIDQgMCBSPj5lbmRvYmoKNCAwIG9iajw8L0xlbmd0aCA1OT4+CnN0cmVhbQpCVAovRjEgMTggVGYKMCAwIFRkCihUZWxlcmlrIFBkZlZpZXdlciBmb3IgQmxhem9yKSBUagpFVAplbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCA1CjAwMDAwMDAwMDAgNjU1MzUgZgowMDAwMDAwMDIxIDAwMDAwIG4KMDAwMDAwMDA4NiAwMDAwMCBuCjAwMDAwMDAxOTUgMDAwMDAgbgowMDAwMDAwNDkwIDAwMDAwIG4KdHJhaWxlciA8PCAgL1Jvb3QgMSAwIFIgL1NpemUgNSA+PgpzdGFydHhyZWYKNjA5CiUlRU9G" />
