@@ -183,6 +183,7 @@ function setDataPreserve()
 	var ZoomSet = false;
 	var ZoomOption = getZoomOption();
 	var ZoomValue = getZoomValue();
+	var ZoomValueOption = getZoomValueOption(ZoomValue); 
 
 	// Parse the ZoomValue
 	var numericZoomValue = parseFloat(ZoomValue);
@@ -193,9 +194,11 @@ function setDataPreserve()
 	// Set the Scale when it is custom and not an option
 	if (ZoomOption == -1)
 	{
-		// Set the initial Scale
-		ZoomSett = true;
-		setScale(numericZoomValue / 100);
+		if (ZoomValueOption == -1) {
+			// It is really a custom item
+			ZoomSett = true;
+			setScale(numericZoomValue / 100);
+		}
 	}
 
 	// Hide the viewer
@@ -317,6 +320,26 @@ function setZoomValue(zoomValue) {
 	}
 	else {
 		console.log("setZoomValue: Zoomcombo not found");
+	}
+}
+
+function getZoomValueOption(value) {
+	// Access the ComboBox
+	var combo = $(".k-combobox-clearable").find("input").last().getKendoComboBox();
+
+	if (combo) {
+		// Get all items from the combobox's dataSource
+		var items = combo.dataSource.data();
+
+		// Find the index of the provided value in the combobox items
+		var index = items.findIndex(function (item) {
+			return item == value; // Adjust this comparison based on the actual data structure of your items
+		});
+
+		return index; // Returns the index if found, otherwise -1
+	} else {
+		console.log("ComboBox not found");
+		return -1; // Return -1 if the ComboBox is not found
 	}
 }
 
