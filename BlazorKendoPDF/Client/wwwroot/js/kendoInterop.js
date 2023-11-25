@@ -323,6 +323,8 @@ function setZoomValue(zoomValue) {
 	}
 }
 
+// Get the option in the zoom combobox of the zoomValue
+// When ZoomOption == -1 AND ZoomValueOption != -1 --> It is the initial option
 function getZoomValueOption(value) {
 	// Access the ComboBox
 	var combo = $(".k-combobox-clearable").find("input").last().getKendoComboBox();
@@ -331,9 +333,12 @@ function getZoomValueOption(value) {
 		// Get all items from the combobox's dataSource
 		var items = combo.dataSource.data();
 
+		// Convert items to a standard array if necessary
+		var standardItemsArray = Array.from(items);
+
 		// Find the index of the provided value in the combobox items
-		var index = items.findIndex(function (item) {
-			return item == value; // Adjust this comparison based on the actual data structure of your items
+		var index = standardItemsArray.findIndex(function (item) {
+			return item.text == value; // Adjust this comparison based on the actual data structure of your items
 		});
 
 		return index; // Returns the index if found, otherwise -1
